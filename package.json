@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql2": "^1.5.3",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.6",
+    "sqlite3": "^4.0.0"
+  },
+  "name": "gestionGastosEdificio",
+  "version": "1.0.0",
+  "description": "Plataforma para gestionar los gastos de edificios dah!",
+  "main": "server.js",
+  "author": "Me and someone else",
+  "license": "MIT"
+}
