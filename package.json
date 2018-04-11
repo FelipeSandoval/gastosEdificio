@@ -10,6 +10,9 @@
     "sequelize": "^4.37.6",
     "sqlite3": "^4.0.0"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
   "name": "gestionGastosEdificio",
   "version": "1.0.0",
   "description": "Plataforma para gestionar los gastos de edificios dah!",
