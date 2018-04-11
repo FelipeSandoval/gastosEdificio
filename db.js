@@ -1,7 +1,7 @@
 const Sequilize = require('sequelize');
-const sequelize = new Sequilize('gastosedificiosdatabase', 'gastosedificios','1234', {
-    host: 'localhost',
-    dialect: 'postgres',
+const sequelize = new Sequilize(CONFIG.db_name, CONFIG.db_user, CONFIG.db_password, {
+    host: CONFIG.db_host,
+    dialect: CONFIG.db_dialect,
     operatorsAliases: false,
     pool: {
         max:5,
@@ -11,4 +11,4 @@ const sequelize = new Sequilize('gastosedificiosdatabase', 'gastosedificios','12
     }
 });
 
-module.exports = sequelize;
+module.exports = { sequelize: sequelize, Sequilize: Sequilize };

@@ -11,7 +11,7 @@ var User = require('../models/User');
 
 router.post('/', (req, res, next) => {
     const { nombre, apellido, correo, rut, telefono, ndepto, pass } = req.body;
-    return User.create({
+    User.create({
         nombre: nombre,
         apellido: apellido,
         correo: correo,
@@ -21,12 +21,24 @@ router.post('/', (req, res, next) => {
         pass: pass
     }).then(user => res.status(201).json({
         data: user,
-        message: 'new User created'
+        message: `nuevo Usuario ${nombre} creado`
     })).catch(error => res.json({
         error: true,
         data: [],
         error: `${error}`
     }));
+});
+
+router.get('/', (req, res, next) => {
+    User.findAll({})
+        .then( users => res.json({
+            data: users
+        }))
+        .catch(error => res.json({
+            error: true,
+            data:[],
+            error: error 
+        }));
 });
 
 module.exports = router;
