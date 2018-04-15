@@ -1,5 +1,9 @@
 const db = require('../db');
 const Ingreso = db.sequelize.define('ingreso', {
+    id_ingreso: {   type: db.Sequelize.INTEGER, 
+        autoIncrement: true,
+        primaryKey: true
+    },
     monto: { type: db.Sequilize.NUMERIC },
     fecha: { type: db.Sequilize.DATE },
 });

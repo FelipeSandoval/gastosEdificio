@@ -9,8 +9,9 @@ var Profile = require('../models/Profile');
 //Create new Profile
 
 router.post('/', (req, res, next) => {
-    const { description } = req.body;
+    const { id_perfil,description } = req.body;
     Profile.create({
+        id_perfil:id_perfil,
         description: description
     }).then(profile => res.status(201).json({
         data: profile,

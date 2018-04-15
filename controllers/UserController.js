@@ -10,14 +10,13 @@ var User = require('../models/User');
 //Create new user
 
 router.post('/', (req, res, next) => {
-    const { nombre, apellido, correo, rut, telefono, ndepto, pass } = req.body;
+    const { nombre, apellido, correo, rut, telefono, pass } = req.body;
     User.create({
         nombre: nombre,
         apellido: apellido,
         correo: correo,
         rut: rut,
         telefono: telefono,
-        ndepto: ndepto,
         pass: pass
     }).then(user => res.status(201).json({
         data: user,
